@@ -228,8 +228,11 @@ require("lazy").setup({
 		},
 		{
 			"nvim-telescope/telescope.nvim",
-			tag = "0.1.x",
-			dependencies = { "nvim-lua/plenary.nvim" },
+			branch = "0.1.x",
+			dependencies = {
+				"nvim-lua/plenary.nvim",
+				"hrsh7th/nvim-cmp",
+			},
 			keys = {
 				{
 					"<leader>ff",
@@ -314,6 +317,24 @@ require("lazy").setup({
 			},
 		},
 		{
+			"williamboman/mason-lspconfig.nvim",
+			dependencies = {
+				"neovim/nvim-lspconfig",
+				"williamboman/mason.nvim",
+			},
+			config = function()
+				require("mason").setup()
+				require("mason-lspconfig").setup({
+					automatic_installation = true,
+					handlers = {
+						function(server_name) -- default handler (optional)
+							require("lspconfig")[server_name].setup({})
+						end,
+					},
+				})
+			end,
+		},
+		{
 			"hrsh7th/nvim-cmp",
 			dependencies = {
 				"hrsh7th/cmp-buffer",
@@ -395,10 +416,6 @@ require("lazy").setup({
 		},
 		{
 			"arnamak/stay-centered.nvim",
-			opts = {},
-		},
-		{
-			"williamboman/mason.nvim",
 			opts = {},
 		},
 	},
