@@ -11,3 +11,4 @@ vim.cmd("syntax enable")
 vim.cmd("filetype plugin indent on")
 
 vim.api.nvim_set_keymap("n", "<C-s>", ":w<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_option("clipboard", "unnamedplus")
