@@ -12,3 +12,4 @@ vim.cmd("filetype plugin indent on")
 
 vim.api.nvim_set_keymap("n", "<C-s>", ":w<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_option("clipboard", "unnamedplus")
+vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
