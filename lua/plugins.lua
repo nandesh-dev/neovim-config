@@ -314,6 +314,38 @@ require("lazy").setup({
 					mode = { "n" },
 					desc = "",
 				},
+				{
+					"<leader>fq",
+					function()
+						require("telescope.builtin").quickfix()
+					end,
+					mode = { "n" },
+					desc = "",
+				},
+        {
+          "<leader>cj", 
+          "<cmd>cprevious<CR>", 
+          mode={"n"}, 
+          desc="",
+        },
+        {
+          "<leader>ck", 
+          "<cmd>cnext<CR>", 
+          mode={"n"}, 
+          desc="",
+        },
+        {
+          "<leader>cc", 
+          "<cmd>cclose<CR>", 
+          mode={"n"}, 
+          desc="",
+        },
+        {
+          "<leader>co", 
+          "<cmd>copen<CR>", 
+          mode={"n"}, 
+          desc="",
+        },
 			},
 		},
 		{
