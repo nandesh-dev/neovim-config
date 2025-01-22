@@ -14,18 +14,19 @@ vim.api.nvim_set_keymap("n", "<C-s>", ":w<CR>", { noremap = true, silent = true 
 vim.api.nvim_set_option("clipboard", "unnamedplus")
 
 vim.diagnostic.config({
-    virtual_text = false,
-    float = {
-        focusable = false,
-        style = "minimal",
-        border = "rounded",
-        source = "always",
-        header = "",
-        prefix = "",
-    },
-    signs = true,
-    underline = true,
-    update_in_insert = true,
-    severity_sort = false,
+	virtual_text = false,
+	float = {
+		focusable = false,
+		style = "minimal",
+		border = "rounded",
+		source = "always",
+		header = "",
+		prefix = "",
+	},
+	signs = true,
+	underline = true,
+	update_in_insert = true,
+	severity_sort = false,
 })
+
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
