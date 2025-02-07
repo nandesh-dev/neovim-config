@@ -17,9 +17,12 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	spec = {
 		{
-			"ellisonleao/gruvbox.nvim",
+			"catppuccin/nvim",
+			name = "catppuccin",
+			priority = 1000,
+			opts = { flavour = "frappe" },
 			init = function()
-				vim.cmd("colorscheme gruvbox")
+				vim.cmd("colorscheme catppuccin")
 			end,
 		},
 		{
