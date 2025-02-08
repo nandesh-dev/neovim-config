@@ -74,6 +74,7 @@ require("lazy").setup({
 						"gitcommit",
 						"make",
 						"tsx",
+            "glsl",
 					},
 				})
 			end,
