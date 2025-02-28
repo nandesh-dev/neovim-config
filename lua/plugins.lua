@@ -75,6 +75,7 @@ require("lazy").setup({
 						"make",
 						"tsx",
 						"glsl",
+						"proto",
 					},
 				})
 			end,
