@@ -74,7 +74,7 @@ require("lazy").setup({
 						"gitcommit",
 						"make",
 						"tsx",
-            "glsl",
+						"glsl",
 					},
 				})
 			end,
@@ -322,6 +322,14 @@ require("lazy").setup({
 					"<leader>fq",
 					function()
 						require("telescope.builtin").quickfix()
+					end,
+					mode = { "n" },
+					desc = "",
+				},
+				{
+					"<leader>ds",
+					function()
+						require("telescope.builtin").lsp_document_symbols()
 					end,
 					mode = { "n" },
 					desc = "",
