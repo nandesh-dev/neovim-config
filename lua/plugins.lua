@@ -87,7 +87,23 @@ require("lazy").setup({
 			cmd = { "ConformInfo" },
 			keys = {
 				{
-					"<leader>c",
+					"<leader>cd",
+					function()
+            vim.g.disable_autoformat = true
+					end,
+					mode = { "n", "v" },
+					desc = "Disable Autoformatting",
+				},
+				{
+					"<leader>ce",
+					function()
+            vim.g.disable_autoformat = false
+					end,
+					mode = { "n", "v" },
+					desc = "Disable Autoformatting",
+				},
+				{
+					"<leader>cf",
 					function()
 						require("conform").format({ async = true })
 					end,
@@ -108,7 +124,19 @@ require("lazy").setup({
 					go = { "gofmt" },
 					proto = { "buf" },
 					python = { "black" },
+          ruby = {"prettier"},
+          eruby = {"prettier"},
+          markdown = {"prettier"},
+          json = {"prettier"},
+          html = {"prettier"},
+          yaml = {"prettier"},
 				},
+        format_on_save = function()
+          if vim.g.disable_autoformat then
+            return
+          end
+          return { timeout_ms = 5000, lsp_format = "fallback" }
+        end,
 			},
 		},
 		{
