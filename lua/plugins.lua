@@ -115,7 +115,7 @@ require("lazy").setup({
 				formatters_by_ft = {
 					nix = { "nixfmt" },
 					lua = { "stylua" },
-					css = { "stylelint" },
+					css = { "stylelint", "prettier" },
 					javascript = { "prettier" },
 					javascriptreact = { "prettier" },
 					typescript = { "prettier" },
@@ -130,6 +130,8 @@ require("lazy").setup({
           json = {"prettier"},
           html = {"prettier"},
           yaml = {"prettier"},
+          sass = {"prettier"},
+          scss = {"prettier"},
 				},
         format_on_save = function()
           if vim.g.disable_autoformat then
