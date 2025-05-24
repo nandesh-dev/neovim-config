@@ -5,7 +5,7 @@ return {
     config = function()
         require("evergarden").setup({
             theme = {
-                variant = "winter",
+                variant = "spring",
             },
         })
         vim.cmd("colorscheme evergarden")
