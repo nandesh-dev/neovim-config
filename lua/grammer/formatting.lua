@@ -46,6 +46,7 @@ return {
             yaml = { "prettier" },
             sass = { "prettier" },
             scss = { "prettier" },
+            glsl = { "prettier" },
         },
         format_on_save = function()
             if vim.g.disable_autoformat then
