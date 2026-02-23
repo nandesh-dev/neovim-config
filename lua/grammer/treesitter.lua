@@ -7,6 +7,7 @@ return {
         require("nvim-treesitter.configs").setup({
             ensure_installed = {
                 "nix",
+                "latex",
                 "javascript",
                 "typescript",
                 "python",
@@ -27,6 +28,9 @@ return {
                 "tsx",
                 "glsl",
                 "proto",
+            },
+            injections = {
+                enable = true,
             },
         })
     end,
