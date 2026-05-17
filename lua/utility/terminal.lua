@@ -41,5 +41,15 @@ return {
         vim.keymap.set("t", "<Esc><Esc>", [[<C-\><C-n>]], {
             desc = "Exit terminal mode",
         })
+
+        vim.api.nvim_create_autocmd("VimLeavePre", {
+            callback = function()
+                for _, term in ipairs(terms) do
+                    if term.job_id then
+                        vim.fn.jobstop(term.job_id)
+                    end
+                end
+            end,
+        })
     end,
 }
